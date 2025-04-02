@@ -7,69 +7,77 @@ namespace WinFormsApp1
         public FrmFormulario()
         {
             InitializeComponent();
+            errorProvider.BlinkRate = 0;
         }
+
+        private ErrorProvider errorProvider = new ErrorProvider();
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            bool erroEncontrado = false;
 
             if (!ValidaNome(txtNome.Text))
             {
-                MessageBox.Show("Nome Inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider.SetError(txtNome, "Nome inválido.");
+                erroEncontrado = true;
             }
 
             if (!ValidaEmail(txtEmail.Text))
             {
-                MessageBox.Show("E-mail Inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider.SetError(txtEmail, "E-mail inválido.");
+                erroEncontrado = true;
             }
 
             if (!ValidaSenha(txtSenha.Text))
             {
-                MessageBox.Show("Senha Inválida (deve ter 6 caracteres).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider.SetError(txtSenha, "Senha inválida (deve ter 6 caracteres).");
+                erroEncontrado = true;
             }
 
             if (string.IsNullOrWhiteSpace(txtConfirmarSenha.Text))
             {
-                MessageBox.Show("Confirme sua senha.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider.SetError(txtConfirmarSenha, "Confirme sua senha.");
+                erroEncontrado = true;
             }
             else if (txtSenha.Text != txtConfirmarSenha.Text)
             {
-                MessageBox.Show("Senhas não coincidem.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider.SetError(txtConfirmarSenha, "Senhas não coincidem.");
+                erroEncontrado = true;
             }
 
             if (!ValidaIdade((int)UpDownIdade.Value))
             {
-                MessageBox.Show("A idade deve estar entre 18 e 100 anos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider.SetError(UpDownIdade, "A idade deve estar entre 18 e 100 anos.");
+                erroEncontrado = true;
             }
 
             if (!VerificaCheckBox())
             {
-                MessageBox.Show("Você deve aceitar os termos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider.SetError(chkTermos, "Você deve aceitar os termos.");
+                erroEncontrado = true;
             }
 
             if (!ValidaCpf(txtCPF.Text))
             {
-                MessageBox.Show("CPF Inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider.SetError(txtCPF, "CPF inválido.");
+                erroEncontrado = true;
             }
-                
+
             if (!ValidaTelefone(txtTelefone.Text))
             {
-                MessageBox.Show("Telefone Inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                errorProvider.SetError(txtTelefone, "Telefone inválido.");
+                erroEncontrado = true;
+            }
+
+            if (erroEncontrado)
+            {
                 return;
             }
-                
 
-            // Exibe mensagem de sucesso se todos os campos estiverem válidos
             MessageBox.Show("Cadastro concluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimparCampos();
         }
+
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {

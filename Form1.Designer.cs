@@ -46,41 +46,51 @@
             txtTelefone = new MaskedTextBox();
             lblCpf = new Label();
             lblTelefone = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)UpDownIdade).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(12, 96);
+            txtNome.Location = new Point(238, 104);
             txtNome.Name = "txtNome";
+            txtNome.PlaceholderText = "Informe seu nome";
             txtNome.Size = new Size(258, 23);
             txtNome.TabIndex = 0;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(12, 147);
+            txtEmail.Location = new Point(238, 155);
             txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "Informe seu email";
             txtEmail.Size = new Size(258, 23);
             txtEmail.TabIndex = 2;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(12, 243);
+            txtSenha.Location = new Point(238, 251);
             txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
+            txtSenha.PlaceholderText = "Insira sua senha";
             txtSenha.Size = new Size(120, 23);
             txtSenha.TabIndex = 3;
             // 
             // txtConfirmarSenha
             // 
-            txtConfirmarSenha.Location = new Point(152, 243);
+            txtConfirmarSenha.Location = new Point(378, 251);
             txtConfirmarSenha.Name = "txtConfirmarSenha";
+            txtConfirmarSenha.PasswordChar = '*';
+            txtConfirmarSenha.PlaceholderText = "Repita";
             txtConfirmarSenha.Size = new Size(118, 23);
             txtConfirmarSenha.TabIndex = 4;
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(15, 77);
+            lblNome.Location = new Point(241, 85);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(40, 15);
             lblNome.TabIndex = 6;
@@ -89,7 +99,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(16, 128);
+            lblEmail.Location = new Point(242, 136);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 7;
@@ -98,7 +108,7 @@
             // txtIdade
             // 
             txtIdade.AutoSize = true;
-            txtIdade.Location = new Point(15, 276);
+            txtIdade.Location = new Point(241, 284);
             txtIdade.Name = "txtIdade";
             txtIdade.Size = new Size(36, 15);
             txtIdade.TabIndex = 9;
@@ -107,7 +117,7 @@
             // lblConfirmarSenha
             // 
             lblConfirmarSenha.AutoSize = true;
-            lblConfirmarSenha.Location = new Point(143, 225);
+            lblConfirmarSenha.Location = new Point(369, 233);
             lblConfirmarSenha.Name = "lblConfirmarSenha";
             lblConfirmarSenha.Size = new Size(95, 15);
             lblConfirmarSenha.TabIndex = 10;
@@ -115,7 +125,7 @@
             // 
             // UpDownIdade
             // 
-            UpDownIdade.Location = new Point(12, 294);
+            UpDownIdade.Location = new Point(238, 302);
             UpDownIdade.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
             UpDownIdade.Name = "UpDownIdade";
             UpDownIdade.Size = new Size(50, 23);
@@ -125,7 +135,7 @@
             // lblSenha
             // 
             lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(12, 225);
+            lblSenha.Location = new Point(238, 233);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(39, 15);
             lblSenha.TabIndex = 12;
@@ -134,16 +144,18 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(54, 16);
+            lblTitulo.BackColor = Color.Transparent;
+            lblTitulo.Font = new Font("Showcard Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.Black;
+            lblTitulo.Location = new Point(262, 9);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(174, 45);
+            lblTitulo.Size = new Size(222, 40);
             lblTitulo.TabIndex = 13;
             lblTitulo.Text = "Formulário";
             // 
             // btnLimpar
             // 
-            btnLimpar.Location = new Point(100, 350);
+            btnLimpar.Location = new Point(326, 358);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(75, 23);
             btnLimpar.TabIndex = 14;
@@ -153,7 +165,7 @@
             // 
             // btnEnviar
             // 
-            btnEnviar.Location = new Point(195, 350);
+            btnEnviar.Location = new Point(421, 358);
             btnEnviar.Name = "btnEnviar";
             btnEnviar.Size = new Size(75, 23);
             btnEnviar.TabIndex = 15;
@@ -164,7 +176,7 @@
             // chkTermos
             // 
             chkTermos.AutoSize = true;
-            chkTermos.Location = new Point(87, 287);
+            chkTermos.Location = new Point(313, 295);
             chkTermos.Name = "chkTermos";
             chkTermos.Size = new Size(183, 34);
             chkTermos.TabIndex = 16;
@@ -173,7 +185,7 @@
             // 
             // txtCPF
             // 
-            txtCPF.Location = new Point(15, 196);
+            txtCPF.Location = new Point(241, 204);
             txtCPF.Mask = "000,000,000-00";
             txtCPF.Name = "txtCPF";
             txtCPF.Size = new Size(117, 23);
@@ -181,7 +193,7 @@
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(152, 196);
+            txtTelefone.Location = new Point(378, 204);
             txtTelefone.Mask = "(00)00000-0000";
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(118, 23);
@@ -190,7 +202,7 @@
             // lblCpf
             // 
             lblCpf.AutoSize = true;
-            lblCpf.Location = new Point(15, 178);
+            lblCpf.Location = new Point(241, 186);
             lblCpf.Name = "lblCpf";
             lblCpf.Size = new Size(28, 15);
             lblCpf.TabIndex = 19;
@@ -199,17 +211,41 @@
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(152, 178);
+            lblTelefone.Location = new Point(378, 186);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(51, 15);
             lblTelefone.TabIndex = 20;
             lblTelefone.Text = "Telefone";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.alien;
+            pictureBox1.Location = new Point(12, 49);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(202, 357);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 21;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.alien;
+            pictureBox2.Location = new Point(526, 49);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(202, 357);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 22;
+            pictureBox2.TabStop = false;
+            // 
             // FrmFormulario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(286, 397);
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(740, 418);
+            Controls.Add(lblTitulo);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(lblTelefone);
             Controls.Add(lblCpf);
             Controls.Add(txtTelefone);
@@ -217,7 +253,6 @@
             Controls.Add(chkTermos);
             Controls.Add(btnEnviar);
             Controls.Add(btnLimpar);
-            Controls.Add(lblTitulo);
             Controls.Add(lblSenha);
             Controls.Add(UpDownIdade);
             Controls.Add(lblConfirmarSenha);
@@ -231,6 +266,8 @@
             Name = "FrmFormulario";
             Text = "Formulário com validação";
             ((System.ComponentModel.ISupportInitialize)UpDownIdade).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -258,5 +295,7 @@
         private MaskedTextBox txtTelefone;
         private Label lblCpf;
         private Label lblTelefone;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
